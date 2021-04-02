@@ -1,21 +1,18 @@
 import numpy as np
-import scipy.linalg
 
-a1 = [1+1j, 1, 1j]  # Setting the values of the vectors(1d array)
-a2 = [1j, 3, 1]
-a3 = [0, 28, 8]
+e1 = [1.0+1.0j, 1.0, 1.0j]  # Setting the values of the vectors(1d array)
+e2 = [1.0j, 3.0, 1.0]
+e3 = [0.0, 28.0, 8.0]
 
-A = np.array([a1, a2, a3])  # Building matrix from the vector arrays
+B = np.array([e1, e2, e3])  # Building matrix from the vector arrays
+A = B.T  # Transposing the matrix, QR function looks for column vectors.
+Q, R = np.linalg.qr(A, mode='complete')   # QR Decomposition; where Q is orthogonal unit vectors
+M = -1 * Q.T  # Switching back to rows and inverting the sign
 
-Q, R = scipy.linalg.qr(A)   # QR Decomposition; where Q is orthogonal unit vectors
-
-# I'll add the steps that python is taking to get to Q(assuming it is correct.
-# I haven't done the guided notes hand portion
-# to figure out if my answer matches or if I need other steps.
-
+# I'll type out the math portion to show the steps for GS.
 print()
-print('Initial Vectors\n', A)
+print('Initial Vectors\n', B)
 print('-------------------------------------------------------------')
-print('Q where Q = [[e1], [e2], [e3]\n', Q)
+print('Orthormal basis: Q = [|e1\'>], [|e2\'>], [|e3\'>]\n', M)
 # print('-------------------------------------------------------------')
-# print('R\n', R)
+# print('Proof\n', O)
