@@ -77,7 +77,7 @@ def harmonic_oscillator_differential_equation(xi, psi, k):
     psi'' = (xi**2 - K)*psi
     :param xi:  position value
     :param psi:  list of wave function and wave-function derivative's values
-    :param K: adjustable parameter to find solutions
+    :param k: adjustable parameter to find solutions
     :return: psi': list of wave function and wave-function derivative's first derivative values
     """
     dpsi = [0, 0]  # initialize the (psi', psi'') vector

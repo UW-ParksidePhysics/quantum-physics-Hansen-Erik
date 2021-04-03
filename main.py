@@ -19,15 +19,15 @@ def main():
     potential_width = 1.0
     positions = np.linspace(-3 * potential_width, 3 * potential_width, num=1000)
     indices = np.arange(0, 4)
-    wag_range = np.linspace(.95, 1.05, num=5)
+    wag_range = np.linspace(.99, 1.01, num=5)
     k = 2*n + 1
-    adjustable_coefficients = k * wag_range
+    adjustable_coefficient = k * wag_range
     if n == (0, 2):
         initial_conditions = (0., 1.)
     else:
         initial_conditions = (1, 0)
     plot_wave_function('harmonic oscillator', potential_width, positions, indices, plot_probability=True)
-    wag_the_dog('harmonic oscillator', adjustable_coefficients, potential_width, positions, initial_conditions)
+    wag_the_dog('harmonic oscillator', adjustable_coefficient, potential_width, positions, initial_conditions)
 
 
 if __name__ == "__main__":

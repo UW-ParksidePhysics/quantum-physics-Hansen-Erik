@@ -43,7 +43,7 @@ def wag_the_dog(potential_name, adjustable_coefficient_values, length_scale, pos
             #   psi(x) = A * y(x)
             psi_numerical = normalization_factor * solution.y[0]
             # Plot normalized solution
-            plt.plot(positions, psi_numerical, label=r'$K = {:.2f}$'.format(adjustable_coefficient))
+            plt.plot(positions, psi_numerical, label=r'$k = {:.2f}$'.format(adjustable_coefficient))
 
         plt.legend()
         draw_harmonic_oscillator_potential(positions, harmonic_oscillator_width=length_scale)
