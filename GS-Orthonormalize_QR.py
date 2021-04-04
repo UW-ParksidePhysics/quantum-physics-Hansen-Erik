@@ -14,8 +14,9 @@ w2 = np.vdot(ep1, e3)          # <e'1|e3>
 v2 = ep1 * w2                  # <e'1|e3>|e'1>
 w3 = np.vdot(ep2, e3)          # <e'2|e3>
 v3 = w3 * ep2                  # <e'2|e3>|e'2>
-u3 = np.subtract(e3, v2, v3)   # |e3> - <e'1|e3>|e'1> - <e'2|e3>|e'2>
-ep3 = u3/(np.linalg.norm(u3))  # Normalizing
+u3 = np.subtract(e3, v2)       # |e3> - <e'1|e3>|e'1> - <e'2|e3>|e'2>
+u4 = np.subtract(u3, v3)
+ep3 = u4/(np.linalg.norm(u4))  # Normalizing
 
 B = np.array([e1, e2, e3])  # Building matrix from the vector arrays
 A = B.T  # Transposing the matrix, QR function looks for column vectors.
